@@ -14,13 +14,24 @@ import re
 \Z	只在字串結尾進行匹配
 '''
 a = '一1二2三3四4五5六七八678九9'
-b = "one1two2three3four4five5six6seven7eight8nine9ten10"
+b = "one1 two2 three3 four4 five5 six6 seven7 eight8 nine9 ten10"
 
 re_findall_1 = re.findall(r"(\d)", a)
 print(re_findall_1)
+# result = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 
-ret = re.findall(r'(\D)',a)
+ret = re.findall(r'(\D)', a)
 print(ret)
+# result = ['一', '二', '三', '四', '五', '六', '七', '八', '九']
 
 re_split = re.split("\d", a)
 print(re_split)
+# Result = ['一', '二', '三', '四', '五', '六七八', '', '', '九', '']
+
+re_split_1 = re.findall("1.*x", b)
+print(re_split_1)
+# result = ['1 two2 three3 four4 five5 six']
+
+re_compile = re.compile(r"\w*ne\w*")
+print(re_compile.findall(b))
+#result = ['one1', 'nine9']
