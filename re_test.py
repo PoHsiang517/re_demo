@@ -14,11 +14,14 @@ link = dict({"烘蛋" : "https://i.imgur.com/9pmCKaZ.jpg",
 
 re_comp = re.compile(r"(烘蛋|回鍋肉|雞翅|蚵仔|蝦|肋排|天氣|氣象)")
 re_list = re_comp.findall(text)
+print_list = []
 
 for k, v in link.items():
 	for i in range(len(re_list)):
 		if k == re_list[i]:
-			print(v)
+			print_list.append(v)
+print(print_list)
+
 '''
 for i in range(len(re_list)):
 
