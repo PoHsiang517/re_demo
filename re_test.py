@@ -1,7 +1,17 @@
 
 import re
 
-text = input("請輸入文字: ")
+# re判斷輸入字串是否為數字
+
+def is_number(num):
+	pattern = re.compile(r"^[-+]?[-0-9]\d*\.\d*|[-+]?\.?[0-9]\d*$")
+	result = pattern.match(num)
+	if result:
+		return True
+	else:
+		return False
+#====================================================================
+
 link = dict({"烘蛋" : "https://i.imgur.com/9pmCKaZ.jpg",
 	         "回鍋肉" : "https://i.imgur.com/B0SBwag.jpg",
 	         "雞翅" : "https://i.imgur.com/tgFj3mE.jpg",
@@ -12,15 +22,16 @@ link = dict({"烘蛋" : "https://i.imgur.com/9pmCKaZ.jpg",
 	         "氣象" : "查詢氣象功能"
 	        })
 
+text = input("請輸入文字: ")
 re_comp = re.compile(r"(烘蛋|回鍋肉|雞翅|蚵仔|蝦|肋排|天氣|氣象)")
 re_list = re_comp.findall(text)
-print_list = []
-
+output = []
 for k, v in link.items():
 	for i in range(len(re_list)):
-		if k == re_list[i]:
-			print_list.append(v)
-print(print_list)
+		if k == re_list[i]: 
+			output.append(v)
+for j in range(len(output)):
+    print(output[i])
 
 '''
 for i in range(len(re_list)):
