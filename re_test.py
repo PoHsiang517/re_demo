@@ -29,7 +29,7 @@ output = []
 for k, v in link.items():
 	for i in range(len(re_list)):
 		if k == re_list[i]: 
-			output.append(f"TextSendMessage(text = " + v + f")")
+			output.append((f"TextSendMessage(text = " + v + f")"))
 print(output)
 
 '''
